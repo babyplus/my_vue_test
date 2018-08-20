@@ -3,17 +3,28 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+    .active {
+      background: cadetblue;
+    }
+    </style>
     <title>my-project</title>
   </head>
   <body>
     <!--<div id="origin_app"></div>-->
     <!-- built files will be auto injected -->
-  <div id="test_for">
-    <ul>
-      <li v-for="food in foodList">
-        {{ food.name }}: ￥{{ food.discount ? food.price * food.discount : food.price }}
-      </li>
-    </ul>
+  <!--<div id="test_for">-->
+    <!--<ul>-->
+      <!--<li v-for="food in foodList">-->
+        <!--{{ food.name }}: ￥{{ food.discount ? food.price * food.discount : food.price }}-->
+      <!--</li>-->
+    <!--</ul>-->
+  <!--</div>-->
+  <div id="test_bind">
+    <a v-bind:href="url" v-bind:class="{active: isActive}">
+      baidu
+      <img v-bind:datasrc="v_img">
+    </a>
   </div>
   </body>
 </html>
