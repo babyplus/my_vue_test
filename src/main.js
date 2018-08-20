@@ -35,12 +35,38 @@ Vue.config.productionTip = false
 //     ]
 //   }
 // })
+// new Vue({
+//   el: '#test_bind',
+//   data: {
+//     url: 'http://www.baidu.com',
+//     v_img: 'https://www.baidu.com/img/bd_logo1.png',
+//     v_class: 'btn btn-default',
+//     isActive: true
+//   }
+// })
 new Vue({
-  el: '#test_bind',
-  data: {
-    url: 'http://www.baidu.com',
-    v_img: 'https://www.baidu.com/img/bd_logo1.png',
-    v_class: 'btn btn-default',
-    isActive: true
+  el: '#test_on',
+  methods: {
+    onClick: function () {
+      console.log('onClicked')
+    },
+    onKeyup: function () {
+      console.log('onKeyup')
+    },
+    onKeydown: function () {
+      console.log('onKeydown')
+    },
+    onSubmit: function () {
+      console.log('onSubmit')
+    },
+    onEnter: function () {
+      console.log('onEnter')
+    },
+    onLeave: function () {
+      console.log('onLeave')
+    },
+    keyEnter: function () {
+      console.log('keyEnter')
+    }
   }
 })

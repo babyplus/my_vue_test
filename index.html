@@ -20,11 +20,19 @@
       <!--</li>-->
     <!--</ul>-->
   <!--</div>-->
-  <div id="test_bind">
-    <a v-bind:href="url" v-bind:class="{active: isActive}">
-      baidu
-      <img v-bind:datasrc="v_img">
-    </a>
+
+  <!--<div id="test_bind">-->
+    <!--<a v-bind:href="url" v-bind:class="{active: isActive}">-->
+      <!--baidu-->
+      <!--<img v-bind:datasrc="v_img">-->
+    <!--</a>-->
+  <!--</div>-->
+  <div id="test_on">
+    <button v-on:click="onClick" v-on="{mouseenter: onEnter, mouseleave: onLeave}">on_click</button>
+    <form v-on:keyup.enter="keyEnter" v-on:submit.prevent="onSubmit()">
+      <input type="text">
+      <button type="submit">submit</button>
+    </form>
   </div>
   </body>
 </html>
