@@ -27,12 +27,18 @@
       <!--<img v-bind:datasrc="v_img">-->
     <!--</a>-->
   <!--</div>-->
-  <div id="test_on">
-    <button v-on:click="onClick" v-on="{mouseenter: onEnter, mouseleave: onLeave}">on_click</button>
-    <form v-on:keyup.enter="keyEnter" v-on:submit.prevent="onSubmit()">
-      <input type="text">
-      <button type="submit">submit</button>
-    </form>
-  </div>
+  <!--<div id="test_on">-->
+    <!--<button v-on:click="onClick" v-on="{mouseenter: onEnter, mouseleave: onLeave}">on_click</button>-->
+    <!--<form v-on:keyup.enter="keyEnter" v-on:submit.prevent="onSubmit()">-->
+      <!--<input type="text">-->
+      <!--<button type="submit">submit</button>-->
+    <!--</form>-->
+  <!--</div>-->
+    <div id="test_modle">
+    <input type="text" v-model.trim="modleName">
+      <pre>{{ modleName }}</pre>
+      <input type="text" v-model.number="modleNum">
+      <pre>{{ modleNum }}</pre>
+    </div>
   </body>
 </html>

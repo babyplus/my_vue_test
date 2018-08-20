@@ -44,29 +44,36 @@ Vue.config.productionTip = false
 //     isActive: true
 //   }
 // })
+// new Vue({
+//   el: '#test_on',
+//   methods: {
+//     onClick: function () {
+//       console.log('onClicked')
+//     },
+//     onKeyup: function () {
+//       console.log('onKeyup')
+//     },
+//     onKeydown: function () {
+//       console.log('onKeydown')
+//     },
+//     onSubmit: function () {
+//       console.log('onSubmit')
+//     },
+//     onEnter: function () {
+//       console.log('onEnter')
+//     },
+//     onLeave: function () {
+//       console.log('onLeave')
+//     },
+//     keyEnter: function () {
+//       console.log('keyEnter')
+//     }
+//   }
+// })
 new Vue({
-  el: '#test_on',
-  methods: {
-    onClick: function () {
-      console.log('onClicked')
-    },
-    onKeyup: function () {
-      console.log('onKeyup')
-    },
-    onKeydown: function () {
-      console.log('onKeydown')
-    },
-    onSubmit: function () {
-      console.log('onSubmit')
-    },
-    onEnter: function () {
-      console.log('onEnter')
-    },
-    onLeave: function () {
-      console.log('onLeave')
-    },
-    keyEnter: function () {
-      console.log('keyEnter')
-    }
+  el: '#test_modle',
+  data: {
+    modleName: 'test',
+    modleNum: 0
   }
 })
