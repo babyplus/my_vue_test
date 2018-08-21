@@ -70,13 +70,19 @@ Vue.config.productionTip = false
 //     }
 //   }
 // })
+// new Vue({
+//   el: '#test_modle',
+//   data: {
+//     // modleName: 'test',
+//     // modleNum: 0
+//     sex: '-->female',
+//     fruits: [],
+//     meat: []
+//   }
+// })
 new Vue({
-  el: '#test_modle',
+  el: '#test_if',
   data: {
-    // modleName: 'test',
-    // modleNum: 0
-    sex: '-->female',
-    fruits: [],
-    meat: []
+    role: 'admin'
   }
 })
