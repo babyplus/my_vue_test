@@ -73,7 +73,10 @@ Vue.config.productionTip = false
 new Vue({
   el: '#test_modle',
   data: {
-    modleName: 'test',
-    modleNum: 0
+    // modleName: 'test',
+    // modleNum: 0
+    sex: '-->female',
+    fruits: [],
+    meat: []
   }
 })

@@ -35,10 +35,44 @@
     <!--</form>-->
   <!--</div>-->
     <div id="test_modle">
-    <input type="text" v-model.trim="modleName">
-      <pre>{{ modleName }}</pre>
-      <input type="text" v-model.number="modleNum">
-      <pre>{{ modleNum }}</pre>
+    <!--<input type="text" v-model.trim="modleName">-->
+      <!--<pre>{{ modleName }}</pre>-->
+      <!--<input type="text" v-model.number="modleNum">-->
+      <!--<pre>{{ modleNum }}</pre>-->
+      <label>
+        male
+        <input v-model="sex" value="-->male" type="radio">
+      </label>
+      <label>
+        female
+        <input v-model="sex" value="-->female" type="radio">
+      </label>
+      <pre>{{sex}}</pre>
+
+      <label>
+        apple
+        <input v-model="fruits" value="apple" type="checkbox">
+      </label>
+      <label>
+        banana
+        <input v-model="fruits" value="banana" type="checkbox">
+      </label>
+      <label>
+        peach
+       <input v-model="fruits" value="peach" type="checkbox">
+      </label>
+      <label>
+        cherry
+        <input v-model="fruits" value="cherry" type="checkbox">
+      </label>
+      <pre>{{fruits}}</pre>
+
+      <select v-model="meat" multiple>
+        <option value="->1">beef</option>
+        <option value="->2">pork</option>
+        <option value="->3">chicken</option>
+      </select>
+      <pre>{{meat}}</pre>
     </div>
   </body>
 </html>
