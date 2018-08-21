@@ -86,19 +86,41 @@ Vue.config.productionTip = false
 //     role: 'admin'
 //   }
 // })
-new Vue({
-  el: '#test_computed',
-  data: {
-    math: 100,
-    physics: 90,
-    english: 80
-  },
-  computed: {
-    sum: function () {
-      return parseFloat(this.math) + parseFloat(this.physics) + parseFloat(this.english)
-    },
-    average: function () {
-      return Math.round(this.sum / 3)
+// new Vue({
+//   el: '#test_computed',
+//   data: {
+//     math: 100,
+//     physics: 90,
+//     english: 80
+//   },
+//   computed: {
+//     sum: function () {
+//       return parseFloat(this.math) + parseFloat(this.physics) + parseFloat(this.english)
+//     },
+//     average: function () {
+//       return Math.round(this.sum / 3)
+//     }
+//   }
+// })
+// Vue.component('alert', {
+//   template: '<button @click="on_click">-->v_component</button>',
+//   methods: {
+//     on_click: function () {
+//       alert('-->alert')
+//     }
+//   }
+// })
+var alertComponent = {
+  template: '<button @click="on_click">-->v_component</button>',
+  methods: {
+    on_click: function () {
+      alert('-->alert')
     }
+  }
+}
+new Vue({
+  el: '#v_component',
+  components: {
+    alert: alertComponent
   }
 })
