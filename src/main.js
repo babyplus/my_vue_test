@@ -80,9 +80,25 @@ Vue.config.productionTip = false
 //     meat: []
 //   }
 // })
+// new Vue({
+//   el: '#test_if',
+//   data: {
+//     role: 'admin'
+//   }
+// })
 new Vue({
-  el: '#test_if',
+  el: '#test_computed',
   data: {
-    role: 'admin'
+    math: 100,
+    physics: 90,
+    english: 80
+  },
+  computed: {
+    sum: function () {
+      return parseFloat(this.math) + parseFloat(this.physics) + parseFloat(this.english)
+    },
+    average: function () {
+      return Math.round(this.sum / 3)
+    }
   }
 })
