@@ -110,17 +110,44 @@ Vue.config.productionTip = false
 //     }
 //   }
 // })
-var alertComponent = {
-  template: '<button @click="on_click">-->v_component</button>',
+// var alertComponent = {
+//   template: '<button @click="on_click">-->v_component</button>',
+//   methods: {
+//     on_click: function () {
+//       alert('-->alert')
+//     }
+//   }
+// }
+// new Vue({
+//   el: '#v_component',
+//   components: {
+//     alert: alertComponent
+//   }
+// })
+var likeComponent = {
+  template: `
+    <button :class="{like_style: liked}" @click="on_click">
+      -->{{ likeCount }}
+    </button>
+  `,
   methods: {
     on_click: function () {
-      alert('-->alert')
+      if (!this.liked) {
+        this.likeCount++
+        this.liked = !this.liked
+      }
+    }
+  },
+  data: function () {
+    return {
+      likeCount: 10,
+      liked: false
     }
   }
 }
 new Vue({
   el: '#v_component',
   components: {
-    alert: alertComponent
+    like: likeComponent
   }
 })
