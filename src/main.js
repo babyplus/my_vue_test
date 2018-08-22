@@ -125,11 +125,7 @@ Vue.config.productionTip = false
 //   }
 // })
 var likeComponent = {
-  template: `
-    <button :class="{like_style: liked}" @click="on_click">
-      -->{{ likeCount }}
-    </button>
-  `,
+  template: '#test_template',
   methods: {
     on_click: function () {
       if (!this.liked) {

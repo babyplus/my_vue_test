@@ -111,6 +111,11 @@
       <!--</tbody>-->
     <!--</table>-->
   <!--</div>-->
+    <template id="test_template">
+      <button :class="{like_style: liked}" @click="on_click">
+        -->{{ likeCount }}
+      </button>
+    </template>
     <div id="v_component">
       <!--<alert></alert>-->
       <like></like>
