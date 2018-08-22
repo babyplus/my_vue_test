@@ -124,26 +124,47 @@ Vue.config.productionTip = false
 //     alert: alertComponent
 //   }
 // })
-var likeComponent = {
-  template: '#test_template',
+// var likeComponent = {
+//   template: '#test_template',
+//   methods: {
+//     on_click: function () {
+//       if (!this.liked) {
+//         this.likeCount++
+//         this.liked = !this.liked
+//       }
+//     }
+//   },
+//   data: function () {
+//     return {
+//       likeCount: 10,
+//       liked: false
+//     }
+//   }
+// }
+// new Vue({
+//   el: '#v_component',
+//   components: {
+//     like: likeComponent
+//   }
+// })
+Vue.component('alert', {
+  template: `
+  <buttom @click="on_click()">-></buttom>
+  `,
+  props: ['msg'],
   methods: {
     on_click: function () {
-      if (!this.liked) {
-        this.likeCount++
-        this.liked = !this.liked
-      }
-    }
-  },
-  data: function () {
-    return {
-      likeCount: 10,
-      liked: false
+      alert(this.msg)
     }
   }
-}
+})
+Vue.component('user', {
+  template: `
+  <a :href="'/user/' + username">go->{{ username }}</a>
+  `,
+  props: ['username'],
+  methods: {}
+})
 new Vue({
-  el: '#v_component',
-  components: {
-    like: likeComponent
-  }
+  el: '#test_component'
 })
