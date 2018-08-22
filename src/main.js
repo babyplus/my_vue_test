@@ -165,35 +165,72 @@ Vue.config.productionTip = false
 //   props: ['username'],
 //   methods: {}
 // })
-Vue.component('balance', {
+// Vue.component('balance', {
+//   template: `
+//   <div>
+//     <show @show-balance="show_balance"></show>
+//     <div v-if="show">
+//       ->0.09
+//     </div>
+//   </div>
+//   `,
+//   methods: {
+//     show_balance: function (data) {
+//       this.show = true
+//       console.log('data', data)
+//     }
+//   },
+//   data: function () {
+//     return {
+//       show: false
+//     }
+//   }
+// })
+// Vue.component('show', {
+//   template: `
+//   <button @click="on_click">->show balance</button>
+//   `,
+//   methods: {
+//     on_click: function () {
+//       this.$emit('show-balance', { a: 1, b: 2 })
+//     }
+//   }
+// })
+var Event = new Vue()
+
+Vue.component('sender', {
   template: `
   <div>
-    <show @show-balance="show_balance"></show>
-    <div v-if="show">
-      ->0.09
-    </div>
+  -> send: <input @keyup="on_change" type="text" v-model="message">
   </div>
   `,
-  methods: {
-    show_balance: function (data) {
-      this.show = true
-      console.log('data', data)
-    }
-  },
   data: function () {
     return {
-      show: false
+      message: ''
+    }
+  },
+  methods: {
+    on_change: function () {
+      Event.$emit('send-some-msg', this.message)
     }
   }
 })
-Vue.component('show', {
+Vue.component('receiver', {
   template: `
-  <button @click="on_click">->show balance</button>
+    <div>
+  -> receive: {{ message }}
+  </div>
   `,
-  methods: {
-    on_click: function () {
-      this.$emit('show-balance', { a: 1, b: 2 })
+  data: function () {
+    return {
+      message: ''
     }
+  },
+  mounted: function () {
+    var me = this
+    Event.$on('send-some-msg', function (message) {
+      me.message = message
+    })
   }
 })
 new Vue({
