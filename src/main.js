@@ -147,23 +147,54 @@ Vue.config.productionTip = false
 //     like: likeComponent
 //   }
 // })
-Vue.component('alert', {
+// Vue.component('alert', {
+//   template: `
+//   <buttom @click="on_click()">-></buttom>
+//   `,
+//   props: ['msg'],
+//   methods: {
+//     on_click: function () {
+//       alert(this.msg)
+//     }
+//   }
+// })
+// Vue.component('user', {
+//   template: `
+//   <a :href="'/user/' + username">go->{{ username }}</a>
+//   `,
+//   props: ['username'],
+//   methods: {}
+// })
+Vue.component('balance', {
   template: `
-  <buttom @click="on_click()">-></buttom>
+  <div>
+    <show @show-balance="show_balance"></show>
+    <div v-if="show">
+      ->0.09
+    </div>
+  </div>
   `,
-  props: ['msg'],
   methods: {
-    on_click: function () {
-      alert(this.msg)
+    show_balance: function (data) {
+      this.show = true
+      console.log('data', data)
+    }
+  },
+  data: function () {
+    return {
+      show: false
     }
   }
 })
-Vue.component('user', {
+Vue.component('show', {
   template: `
-  <a :href="'/user/' + username">go->{{ username }}</a>
+  <button @click="on_click">->show balance</button>
   `,
-  props: ['username'],
-  methods: {}
+  methods: {
+    on_click: function () {
+      this.$emit('show-balance', { a: 1, b: 2 })
+    }
+  }
 })
 new Vue({
   el: '#test_component'
