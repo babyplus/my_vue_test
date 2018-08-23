@@ -236,21 +236,42 @@ Vue.config.productionTip = false
 // new Vue({
 //   el: '#test_component'
 // })
-Vue.filter('meter', function (val) {
-  val = val || 0
-  return (val / 1000).toFixed(2) + 'm'
-})
-Vue.filter('currency', function (val, unit) {
-  val = val || 0
-  unit = unit || '元'
-  return val + unit
+// Vue.filter('meter', function (val) {
+//   val = val || 0
+//   return (val / 1000).toFixed(2) + 'm'
+// })
+// Vue.filter('currency', function (val, unit) {
+//   val = val || 0
+//   unit = unit || '元'
+//   return val + unit
+// })
+// new Vue({
+//   el: '#test_filter',
+//   data: function () {
+//     return {
+//       length: 0,
+//       price: 10
+//     }
+//   }
+// })
+Vue.directive('pin', function (el, bingding) {
+  var pinned = bingding.value
+  if (pinned) {
+    el.style.position = 'fixed'
+    el.style.top = '50%'
+    el.style.left = '50%'
+  } else {
+    el.style.position = 'static'
+  }
 })
 new Vue({
-  el: '#test_filter',
-  data: function () {
-    return {
-      length: 0,
-      price: 10
+  el: '#test_directive',
+  data: {
+    card1: {
+      pinned: false
+    },
+    card2: {
+      pinned: false
     }
   }
 })

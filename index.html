@@ -9,6 +9,13 @@
     }
       .like_style {
         background: aquamarine;
+
+      }
+      .card {
+        background: aqua;
+        width: 200px;
+        padding: 10px;
+        margin: 5px
       }
     </style>
     <title>my-project</title>
@@ -133,17 +140,34 @@
       <!--<pre></pre>-->
       <!--<receiver></receiver>-->
     <!--</div>-->
-    <div id="test_filter">
-      <input v-model.number="length">mm
-      <pre></pre>
-      {{ length | meter }}
-      <pre></pre>
-      <pre>----------------</pre>
-      <input v-model.number="price">
-      <pre></pre>
-      {{ price | currency }}
-      <pre></pre>
-      {{ price | currency('USD') }}
+    <!--<div id="test_filter">-->
+      <!--<input v-model.number="length">mm-->
+      <!--<pre></pre>-->
+      <!--{{ length | meter }}-->
+      <!--<pre></pre>-->
+      <!--<pre>&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</pre>-->
+      <!--<input v-model.number="price">-->
+      <!--<pre></pre>-->
+      <!--{{ price | currency }}-->
+      <!--<pre></pre>-->
+      <!--{{ price | currency('USD') }}-->
+    <!--</div>-->
+    <div id="test_directive">
+      <div v-pin="card1.pinned" class="card">
+        <button @click="card1.pinned = !card1.pinned">--></button>
+        <pre>
+          -->
+          -->
+          -->
+        </pre>
+      </div>
+      <div v-pin="card2.pinned" class="card">
+        <pre>
+          -->
+          -->
+          -->
+        </pre>
+      </div>
     </div>
   </body>
 </html>
