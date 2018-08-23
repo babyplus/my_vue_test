@@ -254,29 +254,75 @@ Vue.config.productionTip = false
 //     }
 //   }
 // })
-Vue.directive('pin', function (el, bingding) {
-  var pinned = bingding.value
-  if (pinned) {
-    el.style.position = 'fixed'
-    if (bingding.modifiers['right']) {
-      el.style['right'] = '5%'
+// Vue.directive('pin', function (el, bingding) {
+//   var pinned = bingding.value
+//   if (pinned) {
+//     el.style.position = 'fixed'
+//     if (bingding.modifiers['right']) {
+//       el.style['right'] = '5%'
+//     }
+//     console.log(bingding.modifiers['bottom'])
+//     if (bingding.arg === 'true') {
+//       el.style.background = 'yellow'
+//     }
+//   } else {
+//     el.style.position = 'static'
+//   }
+// })
+// new Vue({
+//   el: '#test_directive',
+//   data: {
+//     card1: {
+//       pinned: false
+//     },
+//     card2: {
+//       pinned: false
+//     }
+//   }
+// })
+var base = {
+  methods: {
+    show: function () {
+      this.visible = true
+    },
+    hide: function () {
+      this.visible = false
+    },
+    toggle: function () {
+      this.visible = !this.visible
     }
-    console.log(bingding.modifiers['bottom'])
-    if (bingding.arg === 'true') {
-      el.style.background = 'yellow'
+  },
+  data: function () {
+    return {
+      visible: false
     }
-  } else {
-    el.style.position = 'static'
   }
+}
+Vue.component('tooltip', {
+  template: `
+  <div>
+  <span v-on:mouseenter="show" v-on:mouseleave="hide">-->tooltip</span>
+    <div v-if="visible">
+      ---->tooltip something
+    </div>  
+  </div>
+  `,
+  mixins: [base]
+})
+Vue.component('popup', {
+  template: `
+  <div>
+  <button v-on:click="toggle">-->Popup</button>
+    <div v-if="visible">
+      ---->popup something<span v-on:click="hide">(X)</span>
+    </div>  
+  </div>
+  `,
+  mixins: [base]
 })
 new Vue({
-  el: '#test_directive',
+  el: '#test_mixins',
   data: {
-    card1: {
-      pinned: false
-    },
-    card2: {
-      pinned: false
-    }
+    visible: false
   }
 })
