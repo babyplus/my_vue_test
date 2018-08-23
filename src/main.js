@@ -258,8 +258,13 @@ Vue.directive('pin', function (el, bingding) {
   var pinned = bingding.value
   if (pinned) {
     el.style.position = 'fixed'
-    el.style.top = '50%'
-    el.style.left = '50%'
+    if (bingding.modifiers['right']) {
+      el.style['right'] = '5%'
+    }
+    console.log(bingding.modifiers['bottom'])
+    if (bingding.arg === 'true') {
+      el.style.background = 'yellow'
+    }
   } else {
     el.style.position = 'static'
   }
