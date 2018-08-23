@@ -128,10 +128,22 @@
     <!--<div id="test_component">-->
       <!--<balance></balance>-->
     <!--</div>-->
-    <div id="test_component">
-      <sender></sender>
+    <!--<div id="test_component">-->
+      <!--<sender></sender>-->
+      <!--<pre></pre>-->
+      <!--<receiver></receiver>-->
+    <!--</div>-->
+    <div id="test_filter">
+      <input v-model.number="length">mm
       <pre></pre>
-      <receiver></receiver>
+      {{ length | meter }}
+      <pre></pre>
+      <pre>----------------</pre>
+      <input v-model.number="price">
+      <pre></pre>
+      {{ price | currency }}
+      <pre></pre>
+      {{ price | currency('USD') }}
     </div>
   </body>
 </html>
