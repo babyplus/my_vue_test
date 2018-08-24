@@ -280,49 +280,55 @@ Vue.config.productionTip = false
 //     }
 //   }
 // })
-var base = {
-  methods: {
-    show: function () {
-      this.visible = true
-    },
-    hide: function () {
-      this.visible = false
-    },
-    toggle: function () {
-      this.visible = !this.visible
-    }
-  },
-  data: function () {
-    return {
-      visible: false
-    }
-  }
-}
-Vue.component('tooltip', {
-  template: `
-  <div>
-  <span v-on:mouseenter="show" v-on:mouseleave="hide">-->tooltip</span>
-    <div v-if="visible">
-      ---->tooltip something
-    </div>  
-  </div>
-  `,
-  mixins: [base]
-})
-Vue.component('popup', {
-  template: `
-  <div>
-  <button v-on:click="toggle">-->Popup</button>
-    <div v-if="visible">
-      ---->popup something<span v-on:click="hide">(X)</span>
-    </div>  
-  </div>
-  `,
-  mixins: [base]
+// var base = {
+//   methods: {
+//     show: function () {
+//       this.visible = true
+//     },
+//     hide: function () {
+//       this.visible = false
+//     },
+//     toggle: function () {
+//       this.visible = !this.visible
+//     }
+//   },
+//   data: function () {
+//     return {
+//       visible: false
+//     }
+//   }
+// }
+// Vue.component('tooltip', {
+//   template: `
+//   <div>
+//   <span v-on:mouseenter="show" v-on:mouseleave="hide">-->tooltip</span>
+//     <div v-if="visible">
+//       ---->tooltip something
+//     </div>
+//   </div>
+//   `,
+//   mixins: [base]
+// })
+// Vue.component('popup', {
+//   template: `
+//   <div>
+//   <button v-on:click="toggle">-->Popup</button>
+//     <div v-if="visible">
+//       ---->popup something<span v-on:click="hide">(X)</span>
+//     </div>
+//   </div>
+//   `,
+//   mixins: [base]
+// })
+// new Vue({
+//   el: '#test_mixins',
+//   data: {
+//     visible: false
+//   }
+// })
+Vue.component('panel', {
+  template: '#panel-tpl'
 })
 new Vue({
-  el: '#test_mixins',
-  data: {
-    visible: false
-  }
+  el: '#test_slot'
 })

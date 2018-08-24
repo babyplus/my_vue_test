@@ -17,6 +17,19 @@
         padding: 10px;
         margin: 5px
       }
+      .panel {
+        max-width: 300px;
+        border: 1px solid #999;
+      }
+      .panel > * {
+        padding: 15px;
+      }
+      .panel .title {
+        border-bottom: 1px solid #888;
+      }
+      .panel .footer {
+        border-top: 1px solid #777;
+      }
     </style>
     <title>my-project</title>
   </head>
@@ -170,9 +183,30 @@
         <!--</pre>-->
       <!--</div>-->
     <!--</div>-->
-    <div id="test_mixins">
-      <tooltip></tooltip>
-      <popup></popup>
+    <!--<div id="test_mixins">-->
+      <!--<tooltip></tooltip>-->
+      <!--<popup></popup>-->
+    <!--</div>-->
+    <div v-show="false">
+    <template id="panel-tpl" >
+      <div class="panel">
+        <div class="title">
+          <slot name="title"></slot>
+        </div>
+        <div class="content">
+          <slot name="content"></slot>
+        </div>
+        <div class="footer">
+          <slot name="footer">-->footer(in template)</slot>
+        </div>
+      </div>
+    </template>
+    </div>
+    <div id="test_slot">
+      <panel>
+        <div slot="title">-->title(in panel)</div>
+        <div slot="content">-->content(in panel)</div>
+      </panel>
     </div>
   </body>
 </html>
