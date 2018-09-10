@@ -7,12 +7,12 @@ import router from './router'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-// new Vue({
-//   el: '#origin_app',
-//   router,
-//   components: { App },
-//   template: '<App/>'
-// })
+new Vue({
+  el: '#origin_app',
+  router,
+  components: { App },
+  template: '<App/>'
+})
 //
 // new Vue({
 //   el: '#test_for',
@@ -326,9 +326,9 @@ Vue.config.productionTip = false
 //     visible: false
 //   }
 // })
-Vue.component('panel', {
-  template: '#panel-tpl'
-})
-new Vue({
-  el: '#test_slot'
-})
+// Vue.component('panel', {
+//   template: '#panel-tpl'
+// })
+// new Vue({
+//   el: '#test_slot'
+// })

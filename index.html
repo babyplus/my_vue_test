@@ -34,7 +34,7 @@
     <title>my-project</title>
   </head>
   <body>
-    <!--<div id="origin_app"></div>-->
+    <div id="origin_app"></div>
     <!-- built files will be auto injected -->
   <!--<div id="test_for">-->
     <!--<ul>-->
@@ -187,26 +187,26 @@
       <!--<tooltip></tooltip>-->
       <!--<popup></popup>-->
     <!--</div>-->
-    <div v-show="false">
-    <template id="panel-tpl" >
-      <div class="panel">
-        <div class="title">
-          <slot name="title"></slot>
-        </div>
-        <div class="content">
-          <slot name="content"></slot>
-        </div>
-        <div class="footer">
-          <slot name="footer">-->footer(in template)</slot>
-        </div>
-      </div>
-    </template>
-    </div>
-    <div id="test_slot">
-      <panel>
-        <div slot="title">-->title(in panel)</div>
-        <div slot="content">-->content(in panel)</div>
-      </panel>
-    </div>
+    <!--<div v-show="false">-->
+    <!--<template id="panel-tpl" >-->
+      <!--<div class="panel">-->
+        <!--<div class="title">-->
+          <!--<slot name="title"></slot>-->
+        <!--</div>-->
+        <!--<div class="content">-->
+          <!--<slot name="content"></slot>-->
+        <!--</div>-->
+        <!--<div class="footer">-->
+          <!--<slot name="footer">&ndash;&gt;footer(in template)</slot>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</template>-->
+    <!--</div>-->
+    <!--<div id="test_slot">-->
+      <!--<panel>-->
+        <!--<div slot="title">&ndash;&gt;title(in panel)</div>-->
+        <!--<div slot="content">&ndash;&gt;content(in panel)</div>-->
+      <!--</panel>-->
+    <!--</div>-->
   </body>
 </html>
